@@ -46,8 +46,9 @@ namespace aulaPOOcelular
                           celular1.ligacoes = false;
                           celular1.FazerLigacao(celular1.ligacoes);
                     }
-
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("-----Infos do aparelho-----");
+                    Console.ResetColor();
                     Console.WriteLine("Cor do aparelho : " + celular1.cor);
                     Console.WriteLine("Moedelo do aparelho: " + celular1.modelo);
                     Console.WriteLine("Tamanho do aparelho :" + celular1.tamanho);
