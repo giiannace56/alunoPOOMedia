@@ -8,22 +8,13 @@ namespace aulaPOOcelular
         static void Main(string[] args)
         {
            celular celular1 = new celular();
-            string escolha;
-
+            string escolha; 
                 do
                 {
-                    Console.WriteLine("O Celular está ligado?");
+                    Console.WriteLine("O Celular está ligado? S/N");
                     escolha = Console.ReadLine();
 
-                    Console.WriteLine("Deseja liga-lo?");
-                    escolha = Console.ReadLine();
-
-                    if(escolha.ToLower() == "n"){
-                        celular1.ligado = false;
-                        Console.WriteLine(celular1.ligado);
-                        Console.WriteLine("fim programa");
-
-                     }else if(escolha.ToLower() == "s" ){
+                    if(escolha.ToLower() == "s" ){
                     celular1.ligado = true;
 
                     Console.WriteLine("Digite a cor do celular: ");
@@ -35,16 +26,40 @@ namespace aulaPOOcelular
                     Console.WriteLine("Digite o tamanho do celular: ");
                     celular1.tamanho = Console.ReadLine();
 
-                    Console.WriteLine("a cor do celular é :" + celular1.cor);
-                    Console.WriteLine("o modelo do celular é:" + celular1.modelo);
-                    Console.WriteLine("o tamanho do celular é : " + celular1.tamanho);
-                    Console.WriteLine("status do celular é :" + celular1.ligado);
-                    break;
-                    }
+                    Console.Write("Deseja enviar alguma mensagem? S/N ");
+                    string resposta = Console.ReadLine();
                     
-                    }while (escolha.ToUpper() == "s");
+                    if(resposta.ToLower() == "s"){
+                       celular1.mensagens = true;
+                        celular1.Mensagem(celular1.mensagens);
+                    }else{
+                          celular1.mensagens = false;
+                          celular1.Mensagem(celular1.mensagens);
+                    }
+
+                    Console.Write("Deseja fazer alguma ligação? S/N ");
+                    string resposta2 = Console.ReadLine();
+                     if(resposta2.ToLower() == "s"){
+                        celular1.ligacoes = true;
+                        celular1.FazerLigacao(celular1.ligacoes);
+                    }else{
+                          celular1.ligacoes = false;
+                          celular1.FazerLigacao(celular1.ligacoes);
+                    }
+
+                    Console.WriteLine("-----Infos do aparelho-----");
+                    Console.WriteLine("Cor do aparelho : " + celular1.cor);
+                    Console.WriteLine("Moedelo do aparelho: " + celular1.modelo);
+                    Console.WriteLine("Tamanho do aparelho :" + celular1.tamanho);
+                    break;
+
+                    
+                    }else {
+
+                    Console.WriteLine("Fim");
+                    }
+
+                    }while (escolha.ToLower() == "s");
+            }
         }
     }
-}
-
-
