@@ -35,7 +35,7 @@ namespace aulaPOOcelular.classes
 
                 Console.WriteLine("Sua mensagem foi enviada!");
              }else{
-                 Console.WriteLine("tente novamnete , mensagem cancelada!");
+                 Console.WriteLine("okay, mensagem cancelada!");
              }
         }
 
@@ -44,7 +44,7 @@ namespace aulaPOOcelular.classes
             Console.WriteLine("Para quem?");
             string quem = Console.ReadLine();
             Console.WriteLine("Ligando!");
-            Console.WriteLine($"A(O) {quem} ligação recusada , grave seu recado ou você será tarifado após o sinal");
+            Console.WriteLine($"ligação recursada por {quem} , grave seu recado ou você será tarifado após o sinal");
 
             }else{
                 Console.WriteLine("ligue novamente mais tarde!");
